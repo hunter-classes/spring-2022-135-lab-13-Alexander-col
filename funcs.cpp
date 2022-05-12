@@ -20,6 +20,26 @@ std::string printRange(int left, int right)
 
     return output + printRange(left+1,right);
     }
+    return output;
 
+}
 
+// that computes the sum of all numbers in range left ≤   x   ≤ right. 
+// (Don’t use loops, global or static variables.)
+
+int sumRange(int left, int right)
+{
+    int sum =0; 
+    if(left == right)
+    {
+        sum += right;
+        return sum;
+    }
+    else if(left < right)
+    {
+        sum += left;
+        return sum + sumRange(left+1,right);
+    }
+
+    return 0;
 }
