@@ -68,15 +68,36 @@ int sumArray(int *arr, int size)
 // otherwise returns false.
 
 
-bool isAlphanumeric(std::string s){
+bool isAlphanumeric(std::string s)
+{
     if(s.length() == 0) 
     { 
         return true; 
     }
      else if(!isalnum(s[0])) 
-     { 
+    { 
         return false; 
     }
 
     return isAlphanumeric(s.substr(1, s.length()));
+}
+/*
+which returns true if the string is a sequence of nested parentheses:
+Strings "", "()", "(())", "((()))" … are all correct sequences and should return true. 
+Any other symbols or mismatching parenthesis should make the function return false. */
+
+bool nestedParens(std::string s) 
+{
+    if(s.length() == 0) 
+    { 
+        return true; 
+    } 
+    else if(s[0] == '(' && s[s.length() - 1] == ')') 
+    {
+        return nestedParens(s.substr(1, s.length() - 2));
+    } 
+    else 
+    { 
+        return false;
+    }
 }
