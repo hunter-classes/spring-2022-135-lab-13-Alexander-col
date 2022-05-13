@@ -43,3 +43,21 @@ int sumRange(int left, int right)
 
     return 0;
 }
+// which receives an array (as a pointer to its first element)
+// and the size of the array, and should return the sum of its elements. 
+// The function itself should not do any new dynamic memory allocations.
+
+int sumArray(int *arr, int size)
+{
+    int sum = 0; 
+    if (size > 0)
+    {
+        sum += arr[size-1];
+        return sum + sumArray(arr, size-1);
+
+    }
+
+    return 0;
+
+
+}
