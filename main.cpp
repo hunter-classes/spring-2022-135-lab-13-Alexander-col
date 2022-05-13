@@ -34,6 +34,14 @@ int main()
     
     int sum2 = sumArray(arr, 5); // Add up first five elements
     std::cout << "Sum is " << sum2 << std::endl;  // Sum is 34
+    std::cout << "=================================Task D=================================" << std::endl;  
+    std::cout << isAlphanumeric("ABCD") << std::endl;        // true (1)
+    std::cout << isAlphanumeric("Abcd1234xyz") << std::endl; // true (1)
+    std::cout << isAlphanumeric("KLMN 8-7-6") << std::endl;  // false (0)
+    std::cout << "=================================Task E=================================" << std::endl;  
+
+
+
 
     
 

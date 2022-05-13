@@ -1,5 +1,8 @@
-#include <iostream> 
 #include <string>
+#include <iostream>
+#include <cctype>  
+#include "funcs.h"
+
 
 // that prints all numbers in range left ≤   x   ≤ right, 
 // separated by spaces. (Don’t use loops, global or static variables.)
@@ -54,10 +57,26 @@ int sumArray(int *arr, int size)
     {
         sum += arr[size-1];
         return sum + sumArray(arr, size-1);
-
     }
 
     return 0;
 
 
+}
+// which returns true if all characters in the 
+// string are letters and digits, 
+// otherwise returns false.
+
+
+bool isAlphanumeric(std::string s){
+    if(s.length() == 0) 
+    { 
+        return true; 
+    }
+     else if(!isalnum(s[0])) 
+     { 
+        return false; 
+    }
+
+    return isAlphanumeric(s.substr(1, s.length()));
 }
